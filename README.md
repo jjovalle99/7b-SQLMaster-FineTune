@@ -8,14 +8,14 @@ The models were fine-tuned using the following techniques and hardware:
 
 To monitor the training process and evaluate the fine-tuned models' performance, the following tools and methods were employed:
 - **Weights and Biases (W&B)**: W&B is a platform for experiment tracking and visualization. The training progress, evaluation metrics, and hardware usage were logged and can be accessed in the W&B section of this repository.
-- **LangSmith**: LangSmith was used to create a dataset for evaluating the models' performance on unseen data. The evaluation metric used was the embedding distance (used `text-embedding-3-large` from OpenAI) between the generated SQL queries and the ground truth (`gpt-4-0125-preview`). You can find the details [here]()
+- **LangSmith**: LangSmith was used to create a dataset for evaluating the models' performance on unseen data. The evaluation metric used was the embedding distance (used `text-embedding-3-large` from OpenAI) between the generated SQL queries and the ground truth (`gpt-4-0125-preview`). You can find the details [here](https://github.com/jjovalle99/7b-SQLMaster-FineTune/blob/ab4f3445ec4e101c16d0639dcb4f96c8b1a5be4d/langsmith.ipynb). Since in the evaluation process all the fine-tuned models generated answers for the evaluation samples, **flash-attention** was used to speed up the inference.
 
-| Model |  HF Repo                   |  Finetune Notebook                   |
-|---------|---------------------------|---------------------------|
-| Gemma 7B  | [gemma7b-ft-lora-sql-v2](https://huggingface.co/jjovalle99/gemma7b-ft-lora-sql-v2)     | [gemma-7b-sql-fine-tune-lora.ipynb](https://github.com/jjovalle99/7b-SQLMaster-FineTune/blob/7bb695f2c6f879e7e7fd0faa9c9a2a698a539452/gemma-7b-sql-fine-tune-lora.ipynb)|
-| Mistral 7B   | [mistral7b-ft-lora-sql-v2](https://huggingface.co/jjovalle99/mistral7b-ft-lora-sql-v2)    | [mistral-7b-sql-fine-tune-lora.ipynb](https://github.com/jjovalle99/7b-SQLMaster-FineTune/blob/7bb695f2c6f879e7e7fd0faa9c9a2a698a539452/mistral-7b-sql-fine-tune-lora.ipynb) |
-| DeciLM 7B   | [deci7b-ft-lora-sql-v2](https://huggingface.co/jjovalle99/deci7b-ft-lora-sql-v2)    | [deci-7b-sql-fine-tune-lora.ipynb](https://github.com/jjovalle99/7b-SQLMaster-FineTune/blob/7bb695f2c6f879e7e7fd0faa9c9a2a698a539452/deci-7b-sql-fine-tune-lora.ipynb) |
-| LLama2 7B   | [llama7b-ft-lora-sql-v2](https://huggingface.co/jjovalle99/llama7b-ft-lora-sql-v2)     | [llama2-7b-sql-fine-tune-lora.ipynb](https://github.com/jjovalle99/7b-SQLMaster-FineTune/blob/7bb695f2c6f879e7e7fd0faa9c9a2a698a539452/llama2-7b-sql-fine-tune-lora.ipynb) |
+| Final Rank | Model |  HF Repo                   |  Finetune Notebook                   |
+|------|---------|---------------------------|---------------------------|
+| 3 | Gemma 7B  | [gemma7b-ft-lora-sql-v2](https://huggingface.co/jjovalle99/gemma7b-ft-lora-sql-v2)     | [gemma-7b-sql-fine-tune-lora.ipynb](https://github.com/jjovalle99/7b-SQLMaster-FineTune/blob/7bb695f2c6f879e7e7fd0faa9c9a2a698a539452/gemma-7b-sql-fine-tune-lora.ipynb)|
+| 1 | Mistral 7B   | [mistral7b-ft-lora-sql-v2](https://huggingface.co/jjovalle99/mistral7b-ft-lora-sql-v2)    | [mistral-7b-sql-fine-tune-lora.ipynb](https://github.com/jjovalle99/7b-SQLMaster-FineTune/blob/7bb695f2c6f879e7e7fd0faa9c9a2a698a539452/mistral-7b-sql-fine-tune-lora.ipynb) |
+| 4 | DeciLM 7B   | [deci7b-ft-lora-sql-v2](https://huggingface.co/jjovalle99/deci7b-ft-lora-sql-v2)    | [deci-7b-sql-fine-tune-lora.ipynb](https://github.com/jjovalle99/7b-SQLMaster-FineTune/blob/7bb695f2c6f879e7e7fd0faa9c9a2a698a539452/deci-7b-sql-fine-tune-lora.ipynb) |
+| 2 | LLama2 7B   | [llama7b-ft-lora-sql-v2](https://huggingface.co/jjovalle99/llama7b-ft-lora-sql-v2)     | [llama2-7b-sql-fine-tune-lora.ipynb](https://github.com/jjovalle99/7b-SQLMaster-FineTune/blob/7bb695f2c6f879e7e7fd0faa9c9a2a698a539452/llama2-7b-sql-fine-tune-lora.ipynb) |
 
 # LangSmith 
 ## Evaluation
